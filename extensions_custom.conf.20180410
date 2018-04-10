@@ -1,0 +1,17 @@
+;[from-internal-custom]
+;exten => _X!,7,NoOp()
+; same => s,7,NoOp()
+; same => n,Stasis(hello-world)
+; same =>      n,Hangup()
+;exten => _X!,7,Stasis(hello-world)
+;[from-pstn-custom]
+;exten => _X!,1,NoOp()
+;same => s,1,NoOp()
+; same =>      n,Stasis(hello-world)
+; exten => _X!,7,Stasis(hello-world)
+; same =>      n,Hangup()
+[from-zammad]
+exten => 1000,1,NoOp()
+ same =>      n,Answer()
+ same =>      n,Stasis(hello-world)
+ same =>      n,Hangup()
